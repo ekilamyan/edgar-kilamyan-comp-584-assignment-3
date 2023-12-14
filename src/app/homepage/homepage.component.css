@@ -1,0 +1,94 @@
+/* Input box */
+.inputBox {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Inter", sans-serif;
+}
+
+.search-bar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+/* //input outline color */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black !important;
+    /* // opacity: 1!important; */
+}
+
+
+/* // mat-input error carent color */
+::ng-deep .mat-form-field-invalid .mat-input-element,
+.mat-warn .mat-input-element {
+    caret-color: red !important;
+}
+
+/* // mat-label normal state style */
+::ng-deep .mat-form-field-label {
+    color: rgba(0, 0, 0, .6) !important;
+    /* // color: $mainColor!important; */
+}
+
+
+/* borders */
+
+/* left side */
+::ng-deep .mat-form-field-outline-start {
+    border-radius: 10px 0 0 10px !important;
+    min-width: 10px !important;
+}
+
+/*right side */
+::ng-deep .mat-form-field-outline-end {
+    border-radius: 0 10px 10px 0 !important;
+}
+
+::ng-deep.mat-form-field-outline-start,
+::ng-deep.mat-form-field-outline-gap,
+::ng-deep.mat-form-field-outline-end {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.mat-option {
+    font-family: "Inter", sans-serif;
+}
+
+
+.mat-icon:hover {
+    cursor: pointer;
+}
+
+.navbar {
+    margin-top: 10px;
+}
+
+.navbar-button {
+    margin-bottom: 20px;
+}
+
+
+/* expansion panel */
+.mat-expansion-panel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mat-card-title {
+    width: 300px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.titles {
+    margin-right: 40px;
+    margin-left: 24px;
+}

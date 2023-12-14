@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@media only screen and (max-width: 600px) {
+    body {
+        max-width: 100%;
+        /* background-color: lightblue; */
+        /* min-height: 100vh; */
+        color: #303030;
+    }
+}
+
+@media only screen and (min-width: 1120px) {
+    body {
+        padding: 0px;
+        margin: 0px;
+        max-width: 1100px;
+        margin-right: auto;
+        margin-left: auto;
+        /* padding: 20px; */
+        /* min-height: 100vh; */
+    }
+}
+
+/* @font-face {
+    font-family: "Playfair";
+    src: local("Playfair"), url(assets/Fonts/PlayfairDisplay-Black.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: local("Inter"), url(assets/Fonts/Inter-Regular.ttf) format("truetype");
+} */
+
+.primary {
+    color: #3479E3;
+}
+
+.primary-bg {
+    background-color: #3479E3;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #3479E3;
+    color: white;
+    border-radius: 5px;
+    border-color: #3479E3;
+}
+.mat-stroked-button,
+.mat-menu-item {
+    font-family: "Inter", sans-serif;
+    
+}
+
+html, body { height: 100%; }
+/* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

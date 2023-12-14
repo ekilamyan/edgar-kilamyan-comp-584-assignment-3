@@ -1,0 +1,93 @@
+<div class="navbar">
+    <form [formGroup]="searchForm" fxLayout="row" fxLayoutAlign="space-between center">
+        <!-- [formGroup]="deviceSearchForm" -->
+        <mat-form-field fxFlex="30" class="inputBox" appearance="outline">
+            <mat-label> Search </mat-label>
+            <input matInput placeholder="Search" formControlName="searchTerm">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="20" class="inputBox" appearance="outline">
+            <mat-label> city / zipcode </mat-label>
+            <input matInput placeholder="Enter a city or zipcode" formControlName="city">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="10" class="inputBox" appearance="outline">
+            <mat-label> state </mat-label>
+            <input matInput placeholder="Enter a city or zipcode" formControlName="state">
+        </mat-form-field>
+
+        <mat-slide-toggle class="navbar-button" formControlName="open">Open now</mat-slide-toggle>
+
+        <button class="navbar-button" mat-flat-button color="primary" [matMenuTriggerFor]="beforeMenu">Sorting
+            Method</button>
+        <mat-menu #beforeMenu="matMenu">
+            <button (click)="setSorting('stars')" mat-menu-item>Sort by stars</button>
+            <button (click)="setSorting('reviews')" mat-menu-item>Sort by reviews</button>
+        </mat-menu>
+
+        <button (click)="submit()" [disabled]="isFormDisabled()" class="navbar-button" mat-flat-button
+            color="warn">Submit</button>
+    </form>
+
+    <div *ngIf="businesses.length > 0">
+
+        <div class="titles" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-card-title>Name</mat-card-title>
+            <mat-card-content>Address</mat-card-content>
+            <mat-card-content>City</mat-card-content>
+            <mat-card-content>State</mat-card-content>
+            <mat-card-content>zip code</mat-card-content>
+            <mat-card-content>Stars</mat-card-content>
+        </div>
+
+
+
+
+        <div *ngFor="let business of businesses">
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <mat-card-title class="title">{{business.name}}</mat-card-title>
+                    </mat-panel-description>
+
+                    <mat-panel-description>
+                        <mat-card-content>{{business.address}}</mat-card-content>
+                    </mat-panel-description>
+
+                    <mat-panel-description>
+                        <mat-card-content>{{business.city}}</mat-card-content>
+                    </mat-panel-description>
+
+                    <mat-panel-description>
+                        <mat-card-content>{{business.state}}</mat-card-content>
+                    </mat-panel-description>
+
+                    <mat-panel-description>
+                        <mat-card-content>{{business.postal_code}}</mat-card-content>
+                    </mat-panel-description>
+
+                    <mat-action-row>
+                        <mat-card-content>{{business.stars}}</mat-card-content>
+                    </mat-action-row>
+
+                </mat-expansion-panel-header>
+
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="50">
+                    <mat-card-content>Number of reviews: {{business.review_count}}</mat-card-content>
+                    <mat-card-content>Hours: {{business.is_open}}</mat-card-content>
+                    <mat-card-content>Categories: {{business.categories}}</mat-card-content>
+                </div>
+
+            </mat-expansion-panel>
+        </div>
+    </div>
+
+    <div *ngIf="businesses.length <= 0">
+        <h1>No Results</h1>
+    </div>
+
+
+
+
+
+</div>
